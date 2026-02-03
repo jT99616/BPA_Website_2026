@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Please read</title>
+    <link rel="stylesheet" type = "text/css" href="Disclaimer.css">
+</head>
+<body>
+    <div class = "column">
+    <strong>This is a student project for Business Professionals Of America(BPA).
+    This should not be taken for medical advice or a substitute for professional help.
+        If you are a judge use the password provided to continue to the website page.
+    </strong>
+    <form id = "Password">
+        <label for = "password_entry">Password:</label>
+        <input type = "password" id = "password_entry" name = "password" required>
+        <button class = "Button">Submit password</button>
+    </form>
+    </div>
+<script> //I am aware the security is rather questionable, however this is just to prevent unauthorized access//
+//I doubt anyone will go through the trouble to access this if they are looking for help//
+document.getElementById("Password").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const password_entry = document.getElementById("password_entry").value;
+    let password = "BPAJudge312";
+    if (password_entry !== password) {
+        document.body.innerHTML = "Access denied";
+    } else{
+        window.location.href = "Hompage.html";
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+body{
+    background-color:#FBE0BE;
+    font-size: 1.45vw;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.2vw;
+    font-palette: #3B3B3B;
+}
+
+div.container_centered, form#Password{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+button.Button{
+    cursor:pointer;
+    width: 25vw;
+}
+div.column{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    text-align: center;
+}
