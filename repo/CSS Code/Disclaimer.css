@@ -1,0 +1,12 @@
+body{
+    background-color:#FBE0BE;
+    font-size: 1.45vw;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.2vw;
+    font-palette: #3B3B3B;
+}
+strong{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
