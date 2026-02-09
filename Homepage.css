@@ -8,6 +8,12 @@ body{
     letter-spacing: 0.3px;
     font-palette: #3B3B3B;
 }
+button.Home_button{
+    background-color: #FBE0BE;
+    float: right;
+    cursor: pointer;
+    border: none;
+}
 img.Capybara{
     display: block;
     float: right;
