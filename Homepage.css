@@ -9,11 +9,10 @@ body{
     font-palette: #3B3B3B;
 }
 /*Remember to add home button later*/
-
 img.Capybara{
     display: block;
     float: right;
-    transform: translate(-350px,100px) scale(4) ;
+    transform: translate(-350px,100px) scale(4);
 }
 h1.Title{
     max-width:50vw;

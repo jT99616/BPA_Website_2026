@@ -22,11 +22,11 @@
             <caption>We would like to credit these resources for helping us develop this website</caption>
             <tbody>
                 <tr>
-                    <td>• CDC – About Mental Health</td>
+                    <td> CDC – About Mental Health</td>
                     <td>https://www.cdc.gov/mental-health/about/index.html</td>
                 </tr>
                 <tr>
-                    <td>• NIMH – Mental Illness Information</td>
+                    <td> NIMH – Mental Illness Information</td>
                     <td>https://www.nimh.nih.gov/health</td>
                 </tr>
                 <tr>
@@ -47,7 +47,7 @@ document.getElementById("Password").addEventListener("submit", function(e) {
     const password_entry = document.getElementById("password_entry").value;
     let password = "BPAJudge312";
     if (password_entry !== password) {
-        document.body.innerHTML = "Access denied";
+        window.location.href = "Denied.html";
     } else{
         window.location.href = "Homepage.html";
     }

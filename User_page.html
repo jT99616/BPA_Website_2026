@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page</title>
+    <link rel="stylesheet" href="User_page.css" type = "text/css">
+    <link rel = "icon" href = "Capybara-family-circle-cutout.svg" type = "image/x-icon">
+</head>
+<body>
+<div class = "container">
+<div class = "post-box">
+    <textarea id = "postInput" placeholder = "What's on your mind?"></textarea>
+    <button onclick="addPost()">Post</button>
+</div>
+<div id = "feed"></div>
+</div>
+<template id="postTemplate">
+  <div class="post">
+    <div class="post-header">
+      <img class="avatar">
+      <div>
+        <div class="username"></div>
+        <div class="timestamp"></div>
+      </div>
+    </div>
+
+    <div class="post-body"></div>
+
+    <div class="actions">
+      <span class="like-btn">👍 Like (<span class="like-count">0</span>)</span>
+      <span class="comment-toggle">💬 Comment</span>
+    </div>
+
+    <div class="comments" style="display:none;">
+      <div class="comment-list"></div>
+      <input class="comment-input" placeholder="Write a comment...">
+    </div>
+  </div>
+</template>
+<script>
+function addPost() {
+  const text = postInput.value.trim();
+  if (!text) return;
+
+  const tpl = document.getElementById("postTemplate");
+  const post = tpl.content.cloneNode(true);
+
+  post.querySelector(".avatar").src = "Capybara-family-circle-cutout.svg";
+  post.querySelector(".username").textContent = "Jay";
+  post.querySelector(".timestamp").textContent =
+    new Date().toLocaleString();
+  post.querySelector(".post-body").textContent = text;
+
+  post.querySelector(".like-btn").onclick = function () {
+    const c = this.querySelector(".like-count");
+    c.textContent = Number(c.textContent) + 1;
+    }
+
+  post.querySelector(".comment-toggle").onclick = function () {
+    const comments = this.closest(".post").querySelector(".comments");
+    comments.style.display =
+      comments.style.display === "none" ? "block" : "none";
+  };
+
+  post.querySelector(".comment-input").onkeydown = function (e) {
+    if (e.key !== "Enter") return;
+    const list = this.previousElementSibling;
+    const div = document.createElement("div");
+    div.textContent = this.value;
+    list.appendChild(div);
+    this.value = "";
+  };
+  feed.prepend(post);
+  postInput.value = "";
+}
+</script>
+</body>
+</html>
